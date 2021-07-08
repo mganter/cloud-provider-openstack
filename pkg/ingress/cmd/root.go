@@ -30,7 +30,7 @@ import (
 
 	"k8s.io/cloud-provider-openstack/pkg/ingress/config"
 	"k8s.io/cloud-provider-openstack/pkg/ingress/controller"
-	klog "k8s.io/klog/v2"
+	"k8s.io/klog/v2"
 )
 
 var (
@@ -67,12 +67,6 @@ func Execute() {
 
 func init() {
 	log.SetOutput(os.Stdout)
-	log.SetFormatter(&log.TextFormatter{
-		ForceColors:            true,
-		FullTimestamp:          true,
-		DisableLevelTruncation: true,
-		PadLevelText:           true,
-	})
 
 	cobra.OnInitialize(initConfig)
 
